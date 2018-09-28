@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>//created on sept 27
+//created by nick pasco-arnone
+//created for ICS20
+//this program calculates the area and perimeter
+
+import PlaygroundSupport
+import UIKit
+
+class ViewController : UIViewController {
+    
+
+
+let instructionLabel = UILabel()
+let lengthLabel = UILabel()
+let widthLabel = UILabel()
+let lengthTextField = UITextField()
+let widthTextField = UITextField()
+let calculateButton = UIButton()
+let areaLabel = UILabel()
+let perimeterLabel = UILabel()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+         
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 0.976470589637756, green: 0.850980401039124, blue: 0.549019634723663, alpha: 1.0)
+        self.view = view
+        
+        
+        instructionLabel.text = "calculate area and perimeter of a rectangle"
+        view.addSubview(instructionLabel)
+        instructionLabel.translatesAutoresizingMaskIntoConstraints = false
+        instructionLabel.topAnchor.constraint(equalTo:view.topAnchor, constant: 20).isActive = true
+        instructionLabel.leadingAnchor.constraint(equalTo:view.leadingAnchor, constant: 20).isActive = true
+        
+        
+        lengthLabel.text = "enter length"
+        view.addSubview(lengthLabel)
+        lengthLabel.translatesAutoresizingMaskIntoConstraints = false
+        lengthLabel.topAnchor.constraint(equalTo:instructionLabel.bottomAnchor, constant: 20).isActive = true
+        lengthLabel.leadingAnchor.constraint(equalTo:view.leadingAnchor, constant: 20).isActive = true
+        
+        
+        lengthTextField.borderStyle = UITextBorderStyle.roundedRect
+        lengthTextField.placeholder = "in cm  "
+        view.addSubview(lengthTextField)
+        lengthTextField.translatesAutoresizingMaskIntoConstraints = false
+        lengthTextField.topAnchor.constraint(equalTo:lengthLabel.bottomAnchor, constant: 20).isActive = true
+        lengthTextField.leadingAnchor.constraint(equalTo:view.leadingAnchor, constant: 20).isActive = true
+        
+        widthLabel.text = "enter width"
+        view.addSubview(widthLabel)
+        widthLabel.translatesAutoresizingMaskIntoConstraints = false
+        widthLabel.topAnchor.constraint(equalTo:lengthTextField.bottomAnchor, constant: 20).isActive = true
+        widthLabel.leadingAnchor.constraint(equalTo:view.leadingAnchor, constant: 20).isActive = true
+        
+        
+        widthTextField.borderStyle = UITextBorderStyle.roundedRect
+        widthTextField.placeholder = "in cm  "
+        view.addSubview(widthTextField)
+        widthTextField.translatesAutoresizingMaskIntoConstraints = false
+        widthTextField.topAnchor.constraint(equalTo:widthLabel.bottomAnchor, constant: 20).isActive = true
+        widthTextField.leadingAnchor.constraint(equalTo:view.leadingAnchor, constant: 20).isActive = true
+        
+        calculateButton.setTitle("click here for area and perimeter ", for: .normal)
+        calculateButton.titleLabel?.textAlignment = .center
+        calculateButton.setTitleColor(.blue, for: .normal)
+        calculateButton.addTarget(self, action: #selector(calculateAreaAndPerimeter), for: .touchUpInside)
+        view.addSubview(calculateButton)
+        calculateButton.translatesAutoresizingMaskIntoConstraints = false
+        calculateButton.topAnchor.constraint(equalTo:widthTextField.bottomAnchor, constant: 20).isActive = true
+        
+        areaLabel.text = nil 
+        view.addSubview(areaLabel)
+        areaLabel.translatesAutoresizingMaskIntoConstraints = false
+        areaLabel.topAnchor.constraint(equalTo:calculateButton.bottomAnchor, constant: 20).isActive = true
+        areaLabel.leadingAnchor.constraint(equalTo:view.leadingAnchor, constant: 20).isActive = true
+        
+        perimeterLabel.text = nil
+        view.addSubview(perimeterLabel)
+        perimeterLabel.translatesAutoresizingMaskIntoConstraints = false
+        perimeterLabel.topAnchor.constraint(equalTo:areaLabel.bottomAnchor, constant: 20).isActive = true
+        perimeterLabel.leadingAnchor.constraint(equalTo:view.leadingAnchor, constant: 20).isActive = true
+        
+    }
+    @objc func calculateAreaAndPerimeter() {
+        let length : Int = Int(lengthTextField.text!)!
+        let width : Int = Int(widthTextField.text!)!
+        
+        let area = length * width
+        let perimeter = 2 * (length + width)
+        
+        areaLabel.text = "the area is: \(area) cm^2"
+        perimeterLabel.text = "the perimeter is: \(perimeter) cm"
+    }
+    
+     var perfersStatusBarHidden: Bool {
+        return true 
+    }
+    
+}
+
+PlaygroundPage.current.liveView = ViewController()
+</string>
+			<key>ModifiedRange</key>
+			<string>{145, 4591}</string>
+			<key>OriginalContent</key>
+			<string>show("What is your name?")
+
+let name = ask("Name")
+
+show("Hi " + name)
+
+</string>
+			<key>OriginalRange</key>
+			<string>{145, 72}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Answers.playgroundchapter/Pages/Text.playgroundpage/Contents.swift</string>
+</dict>
+</plist>
